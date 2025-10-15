@@ -1,0 +1,153 @@
+:root {
+  --rojo: #e50914;
+  --negro: #0a0a0a;
+  --blanco: #ffffff;
+  --gris: #cccccc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+  color: var(--blanco);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+/* VIDEO DE FONDO */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* detrás del contenido */
+}
+
+/* NAVBAR */
+nav {
+  background: rgba(10, 10, 10, 0.9); /* negro sólido pero con transparencia */
+  border-bottom: 2px solid var(--rojo);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+nav .logo img {
+  height: 90px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--blanco);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--rojo);
+}
+
+/* Submenú */
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid var(--rojo);
+  min-width: 180px;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul li ul li a {
+  display: block;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+}
+
+nav ul li ul li a:hover {
+  background: var(--rojo);
+  color: var(--blanco);
+}
+
+/* CONTENIDO */
+section {
+  flex: 1;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6); /* negro transparente */
+  max-width: 900px;
+  margin: auto;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--rojo);
+}
+
+section p {
+  font-size: 1.2rem;
+  color: var(--gris);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.btn {
+  background: var(--rojo);
+  color: var(--blanco);
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--blanco);
+  color: var(--rojo);
+}
+
+/* FOOTER */
+footer {
+  background: var(--rojo);
+  color: var(--blanco);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 2;
+}
